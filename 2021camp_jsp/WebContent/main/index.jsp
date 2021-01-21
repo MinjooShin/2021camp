@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%request.setCharacterEncoding("EUC-KR"); 
-	String fname = request.getParameter("fname"); 
-	String lname = request.getParameter("lname");
-	%>
-	<h4>입력한 데이터는 </h4>
-	<%=fname +", "+ lname%>
-	
+
 </body>
 </html>
