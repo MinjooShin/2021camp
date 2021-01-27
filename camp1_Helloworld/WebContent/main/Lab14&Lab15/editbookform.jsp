@@ -1,22 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="camp1_Helloworld.BookDao,camp1_Helloworld.Book"%>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-	<%@page import="camp1_Helloworld.BookDao,camp1_Helloworld.Book"%>  
-  
+ 
 	<%  
+	BookDao BookDAO = new BookDao();
 	String id=request.getParameter("id");  
-	Book b=BookDao.getRecordById(Integer.parseInt(id));  
+	Book b=BookDAO.view(Integer.parseInt(id));  
 	%>  
 	  
-	<h1>기록 편집하기</h1>  
-	<form method="post" action="editbook.jsp">  
-	<input type="hidden" name="id" value="<%=b.getId() %>"/>  
+	<h1>Edit</h1>  
+	<form method="post" action="edit_ok.jsp">  
+	<input type="hidden" name="seq" value="<%=b.getSeq() %>"/>  
 	<table>  
 	<tr><td>Title:</td><td>  
 	<input type="text" name="title" value="<%= b.getTitle()%>"/></td></tr>  
@@ -24,10 +26,8 @@
 	<input type="text" name="author" value="<%= b.getAuthor()%>"/></td></tr>  
 	<tr><td>Comment:</td><td>  
 	<textarea cols="50" rows="5" name="comment"><%= b.getComment()%></textarea></td></tr>
-	<tr><td>File Upload:</td><td>
-	<input type="text" name="file" value="<%=b.getFile() %>" /></td></tr>  
 	<tr><td colspan="2"><input type="submit" value="Update"/>
-	<input type="button" value="Cancel" onclick=" location='listbook.jsp' "/></td></tr>  
+	<input type="button" value="Cancel" onclick="history.back() "/></td></tr>  
 	</table>  
 	</form>  
   

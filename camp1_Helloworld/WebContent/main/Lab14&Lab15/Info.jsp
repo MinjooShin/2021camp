@@ -3,12 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <body>
-
-	<p>Record successfully saved!</p>  
-	<jsp:include page="listbook.jsp"></jsp:include> 
+	<h1>Book Review</h1>
 </body>
 </html>

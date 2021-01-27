@@ -1,8 +1,10 @@
 package camp1_Helloworld;
+import java.util.Date;
 
 public class Book {
-	private int id;  
-	private String title,author,comment, file;  
+	private int seq;  
+	private String title,author,comment;
+	private Date regdate;
 	//generate getters and setters  
 	
 	public void setTitle(String title) {
@@ -14,13 +16,6 @@ public class Book {
 	public void setComment(String comment) {
 		this.comment=comment;
 	}
-	public void setFile(String file) {
-		this.file=file;
-	}
-	public void setId(int id) {
-		this.id=id;
-	}
-	
 	public String getTitle() {
 		return title;
 	}
@@ -30,10 +25,16 @@ public class Book {
 	public String getComment() {
 		return comment;
 	}
-	public String getFile() {
-		return file;
+	public int getSeq() {
+		return seq;
 	}
-	public int getId() {
-		return id;
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	public Date getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
 }
