@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class Book {
 	private int seq;  
-	private String title,author,comment;
+	private String title,author,comment, image;
 	private Date regdate;
 	//generate getters and setters  
 	
@@ -36,5 +36,11 @@ public class Book {
 	}
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

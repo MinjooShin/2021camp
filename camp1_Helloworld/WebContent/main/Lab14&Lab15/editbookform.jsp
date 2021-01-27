@@ -17,7 +17,7 @@
 	%>  
 	  
 	<h1>Edit</h1>  
-	<form method="post" action="edit_ok.jsp">  
+	<form method="post" action="edit_ok.jsp" enctype="multipart/form-data">  
 	<input type="hidden" name="seq" value="<%=b.getSeq() %>"/>  
 	<table>  
 	<tr><td>Title:</td><td>  
@@ -26,6 +26,9 @@
 	<input type="text" name="author" value="<%= b.getAuthor()%>"/></td></tr>  
 	<tr><td>Comment:</td><td>  
 	<textarea cols="50" rows="5" name="comment"><%= b.getComment()%></textarea></td></tr>
+	<tr><td>File Upload:</td><td>  
+	<img src="${pageContext.request.contextPath }/upload/<%=b.getImage()%>" style="width:200px;height:200px;">
+	<input type="file" name="image"/></td></tr> 
 	<tr><td colspan="2"><input type="submit" value="Update"/>
 	<input type="button" value="Cancel" onclick="history.back() "/></td></tr>  
 	</table>  

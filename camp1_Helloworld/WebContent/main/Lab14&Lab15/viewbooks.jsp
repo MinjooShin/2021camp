@@ -23,6 +23,8 @@
 	<tr><td>Title:</td><td><%=b.getTitle() %></td></tr>  
 	<tr><td>Author:</td><td><%=b.getAuthor() %></td></tr>  
 	<tr><td>Comment:</td><td><a><%=b.getComment() %></a></td></tr> 
+	<tr><td>File Upload:</td><td>  
+	<img src="${pageContext.request.contextPath }/upload/<%=b.getImage()%>" style="width:200px;height:200px;">
 	<tr><td colspan="2"><a href="editbookform.jsp?id=<%=b.getSeq()%>">Edit</a></td>
 	<td><input type="button" value="Cancel" onclick="history.back()" /></td></tr>  
 	</table>   

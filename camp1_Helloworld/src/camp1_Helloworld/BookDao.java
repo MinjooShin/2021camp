@@ -7,8 +7,8 @@ import camp1_Helloworld.Book;
 
 public class BookDao {
 	
-	private final String Save = "insert into book (title, author, comment) values (?,?,?)";
-	private final String Update = "update book set title=?, author=?, comment=? where seq=?";
+	private final String Save = "insert into book (title, author, comment, image) values (?,?,?,?)";
+	private final String Update = "update book set title=?, author=?, comment=?, image=? where seq=?";
 	private final String Delete = "delete from book  where seq=?";
 	private final String View = "select * from book  where seq=?";
 	private final String List = "select * from book order by regdate desc";
@@ -33,6 +33,7 @@ public class BookDao {
 	        ps.setString(1,b.getTitle());  
 	        ps.setString(2,b.getAuthor());  
 	        ps.setString(3,b.getComment());  
+	        ps.setString(4,b.getImage()); 
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
@@ -45,7 +46,8 @@ public class BookDao {
 	        ps.setString(1,b.getTitle());  
 	        ps.setString(2,b.getAuthor());  
 	        ps.setString(3,b.getComment());  
-	        ps.setInt(4,b.getSeq());  
+	        ps.setString(4,b.getImage()); 
+	        ps.setInt(5,b.getSeq());  
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
@@ -72,6 +74,7 @@ public class BookDao {
 	            b.setAuthor(rs.getString("author"));  
 	            b.setComment(rs.getString("comment"));  
 	            b.setRegdate(rs.getDate("regdate"));  
+	            b.setImage(rs.getString("image"));  
 	            list.add(b);  
 	        }  
 	        rs.close();
@@ -92,6 +95,7 @@ public class BookDao {
 	            b.setAuthor(rs.getString("author"));  
 	            b.setComment(rs.getString("comment"));
 	            b.setRegdate(rs.getDate("regdate")); 
+	            b.setImage(rs.getString("image"));
 	        }  
 	        rs.close();
 	    }catch(Exception e){System.out.println(e);}  
