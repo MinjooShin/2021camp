@@ -1,8 +1,8 @@
-package com.spring.first.dao;
+package com.spring.second.dao;
 
 import java.util.List;
- 
-import com.spring.first.model.EmployeeVO;
+
+import com.spring.second.model.EmployeeVO;
  
 public interface EmployeeDAO 
 {

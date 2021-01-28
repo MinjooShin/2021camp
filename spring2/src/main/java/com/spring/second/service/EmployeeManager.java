@@ -1,8 +1,8 @@
-package com.spring.first.service;
+package com.spring.second.service;
 
 import java.util.List;
  
-import com.spring.first.model.EmployeeVO;
+import com.spring.second.model.EmployeeVO;
  
 public interface EmployeeManager 
 {

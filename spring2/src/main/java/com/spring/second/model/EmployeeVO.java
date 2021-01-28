@@ -1,4 +1,4 @@
-package com.spring.first.model;
+package com.spring.second.model;
  
 import java.io.Serializable;
  

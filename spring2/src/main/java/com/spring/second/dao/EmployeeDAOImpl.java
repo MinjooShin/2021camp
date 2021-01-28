@@ -1,11 +1,12 @@
-package com.spring.first.dao;
+package com.spring.second.dao;
 
 import java.util.ArrayList;
+
 import java.util.List;
  
 import org.springframework.stereotype.Repository;
  
-import com.spring.first.model.EmployeeVO;
+import com.spring.second.model.EmployeeVO;
  
 @Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
